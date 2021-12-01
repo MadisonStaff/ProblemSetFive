@@ -76,7 +76,11 @@
             while (running)
         {
             int choice = Hypothermia();
-            //call method hypothermia here
+
+            /*
+            call method hypothermia here
+             */
+
             if (choice == 1) {
                 System.out.println("-----DEATH------");
                 System.out.println("You have lost the possible point for this round.");

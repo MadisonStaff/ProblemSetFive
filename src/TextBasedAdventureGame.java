@@ -28,6 +28,7 @@
                 // call the method Jaguar()
                 if (choice == 1) {
                     System.out.println("-----DEATH------");
+                    System.out.println("You have lost the possible point for this round.");
                     break;
                 }
                 if (choice == 2) {
@@ -35,7 +36,7 @@
                     score++;
                     break;
                 }
-                if (Jaguar() == 3) {
+                if (choice == 3) {
                     System.out.println("Invalid response");
 
                 }
@@ -46,6 +47,7 @@
                 // call the method Venom here
                 if (choice == 1) {
                     System.out.println("-----DEATH------");
+                    System.out.println("You have lost the possible point for this round.");
                     break;
                 }
                 if (choice == 3) {
@@ -61,10 +63,11 @@
             //call the method Starvation here
             for (j = 2; j == 2; j++) {
                 int choice = Starvation();
-                if (Starvation() == 1) {
+                if (choice == 1) {
                     System.out.println("-----DEATH------");
+                    System.out.println("You have lost the possible point for this round.");
                     break;
-                } else if (Starvation() == 3) {
+                } else if (choice == 3) {
                     System.out.println("Invalid response");
                 }
                 if (choice == 2) {
@@ -78,6 +81,7 @@
                 //call method hypothermia here
                 if (choice == 1) {
                     System.out.println("-----DEATH------");
+                    System.out.println("You have lost the possible point for this round.");
                     break;
                 } if (choice == 3) {
                     System.out.println("Invalid response");
@@ -87,6 +91,8 @@
                     score++;
                 }
             }
+
+
         }
 
 
@@ -124,13 +130,16 @@
             System.out.println("1. Pick up the sword to your left and fight it");
             System.out.println("2. Run away");
             choice = in.nextInt();
-            if (choice == 1) {
+            if (choice == 2) {
                 System.out.println("You are running away, but the snake has caught up. It has bitten you in the leg and" +
                         "you perish from its venom");
                 return 1;
-            } else {
+            } if (choice == 1){
                 System.out.println("You grab the sword. In one fowl swoop, you slay the snake and are unscathed");
                 return 2;
+            }
+            else {
+                return 3;
             }
         }
 

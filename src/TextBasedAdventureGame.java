@@ -98,11 +98,9 @@
 
 
 
-
-
-
-
-        // A return statement of 1 means the player dies a return statement of 2 means the player survives.
+/**
+ * A return statement of 1 means the player dies a return statement of 2 means the player survives.
+*/
         public static int Jaguar() {
             int choice;
             Scanner in = new Scanner(System.in);

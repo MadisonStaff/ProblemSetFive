@@ -9,18 +9,16 @@
             Random rand = new Random();
             int j = 0;
             int score = 0;
+            boolean running = true;
 
 
             // Game variables
             String[] enemies = {"Hypothermia", "Jaguar", "Venom", "Starvation"};
-
-            boolean running = true;
-
             System.out.println("You are stranded in the jungle!");
 
 
             // GAME:
-            for (j = 0; j == 0; j++) {
+            while (running) {
                 System.out.println("-------------------------------------------------");
                 System.out.println("The choices you make will decide if you survive. Choose wisely. ");
                 int choice = Jaguar();
@@ -41,7 +39,7 @@
                 }
 
             }
-            for (j = 1; j == 1; j++) {
+            while (running) {
                 int choice = Venom();
                 // call the method Venom here
                 if (choice == 1) {
@@ -49,49 +47,53 @@
                     System.out.println("You have lost the possible point for this round.");
                     break;
                 }
+                if (choice == 2) {
+                    System.out.println("You survived to the next obstacle!");
+                    score++;
+                    break;
+                }
                 if (Venom() == 3) {
                 }
-                if (choice == 2) {
-                    System.out.println("You survived to the next obstacle!");
-                    score++;
-                    break;
 
-                }
             }
-            //call the method Starvation here
-            for (j = 2; j == 2; j++) {
-                int choice = Starvation();
-                if (choice == 1) {
-                    System.out.println("-----DEATH------");
-                    System.out.println("You have lost the possible point for this round.");
-                    break;
-                } else if (Starvation() == 3) {
-                }
-                if (choice == 2) {
-                    System.out.println("You survived to the next obstacle!");
-                    score++;
-                    break;
-                }
+
+        //call the method Starvation here
+            while (running) {
+            int choice = Starvation();
+            if (choice == 1) {
+                System.out.println("-----DEATH------");
+                System.out.println("You have lost the possible point for this round.");
+                break;
             }
-            for (j = 3; j == 3; j++) {
-                int choice = Hypothermia();
-                //call method hypothermia here
-                if (choice == 1) {
-                    System.out.println("-----DEATH------");
-                    System.out.println("You have lost the possible point for this round.");
-                    break;
-                } if (Hypothermia() == 3) {
-                }
-                if (choice == 2){
-                    System.out.println( "You survived to the next obstacle!");
-                    score++;
-                }
+            if (choice == 2) {
+                System.out.println("You survived to the next obstacle!");
+                score++;
+                break;
             }
+            else if (Starvation() == 3) {
+            }
+        }
+            while (running)
+        {
+            int choice = Hypothermia();
+            //call method hypothermia here
+            if (choice == 1) {
+                System.out.println("-----DEATH------");
+                System.out.println("You have lost the possible point for this round.");
+                break;
+            }
+            if (choice == 2) {
+                System.out.println("You survived to the next obstacle!");
+                score++;
+            }
+            if (Hypothermia() == 3) {
+            }
+        }
             System.out.println("------CONGRATULATIONS-------");
             System.out.println("You have made it to the end of the Jungle challenge!");
-            System.out.println("your score is " + ((score / 4) * 100) + "%");
+            System.out.println("your score is "+((score /4)*100)+"%");
 
-        }
+    }
 
 
 

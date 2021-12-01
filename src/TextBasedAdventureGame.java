@@ -16,7 +16,7 @@
 
             boolean running = true;
 
-            System.out.println("You are stranded on a desert island!");
+            System.out.println("You are stranded in the jungle!");
 
 
             // GAME:
@@ -36,8 +36,7 @@
                     score++;
                     break;
                 }
-                if (choice == 3) {
-                    System.out.println("Invalid response");
+                if (Jaguar() == 3) {
 
                 }
 
@@ -50,8 +49,7 @@
                     System.out.println("You have lost the possible point for this round.");
                     break;
                 }
-                if (choice == 3) {
-                    System.out.println("Invalid response");
+                if (Venom() == 3) {
                 }
                 if (choice == 2) {
                     System.out.println("You survived to the next obstacle!");
@@ -67,8 +65,7 @@
                     System.out.println("-----DEATH------");
                     System.out.println("You have lost the possible point for this round.");
                     break;
-                } else if (choice == 3) {
-                    System.out.println("Invalid response");
+                } else if (Starvation() == 3) {
                 }
                 if (choice == 2) {
                     System.out.println("You survived to the next obstacle!");
@@ -83,15 +80,16 @@
                     System.out.println("-----DEATH------");
                     System.out.println("You have lost the possible point for this round.");
                     break;
-                } if (choice == 3) {
-                    System.out.println("Invalid response");
+                } if (Hypothermia() == 3) {
                 }
                 if (choice == 2){
                     System.out.println( "You survived to the next obstacle!");
                     score++;
                 }
             }
-
+            System.out.println("------CONGRATULATIONS-------");
+            System.out.println("You have made it to the end of the Jungle challenge!");
+            System.out.println("your score is " + ((score / 4) * 100) + "%");
 
         }
 

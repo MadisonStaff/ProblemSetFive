@@ -8,7 +8,7 @@
             Scanner in = new Scanner(System.in);
             Random rand = new Random();
             int j = 0;
-            int score = 0;
+            double score = 0;
             boolean running = true;
 
 

@@ -8,9 +8,11 @@
             Scanner in = new Scanner(System.in);
             Random rand = new Random();
             int j = 0;
+            int score = 0;
+
 
             // Game variables
-            String[] enemies = {"Hypothermia", "Jaguar", "Poison", "Starvation"};
+            String[] enemies = {"Hypothermia", "Jaguar", "Venom", "Starvation"};
 
             boolean running = true;
 
@@ -30,7 +32,7 @@
                 }
                 if (choice == 2) {
                     System.out.println("You survived to the next obstacle!");
-                    j = 1;
+                    score++;
                     break;
                 }
                 if (Jaguar() == 3) {
@@ -51,7 +53,7 @@
                 }
                 if (choice == 2) {
                     System.out.println("You survived to the next obstacle!");
-                    j++;
+                    score++;
                     break;
 
                 }
@@ -67,18 +69,22 @@
                 }
                 if (choice == 2) {
                     System.out.println("You survived to the next obstacle!");
-                    j++;
+                    score++;
                     break;
                 }
             }
             for (j = 3; j == 3; j++) {
                 int choice = Hypothermia();
                 //call method hypothermia here
-                if (Hypothermia() == 1) {
+                if (choice == 1) {
                     System.out.println("-----DEATH------");
                     break;
-                } else if (Hypothermia() == 3) {
+                } if (choice == 3) {
                     System.out.println("Invalid response");
+                }
+                if (choice == 2){
+                    System.out.println( "You survived to the next obstacle!");
+                    score++;
                 }
             }
         }

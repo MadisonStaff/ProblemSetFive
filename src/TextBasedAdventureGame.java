@@ -78,12 +78,12 @@
             /*
             call method hypothermia here
              */
-            if (choice == 2) {
+            if (choice == 1) {
                 System.out.println("-----DEATH------");
                 System.out.println("You have lost the possible point for this round.");
                 break;
             }
-            if (choice == 1) {
+            if (choice == 2) {
                 System.out.println("You survived to the next obstacle!");
                 score++;
                 break;

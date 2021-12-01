@@ -71,13 +71,26 @@ public class TextBasedAdventureGame {
                     System.out.println("You survived to the next obstacle!");
                     score++;
                     break;
-                }
-                else if (Starvation() == 3) {
+                } else if (Starvation() == 3) {
                 }
             }
             while (running) {
                 int choice = Hypothermia();
 
+                if (choice == 1) {
+                    System.out.println("-----DEATH------");
+                    System.out.println("You have lost the possible point for this round.");
+                    break;
+                }
+                if (choice == 2) {
+                    System.out.println("You survived to the next obstacle!");
+                    score++;
+                    break;
+                } else if (Starvation() == 3) {
+                }
+            }
+            while (running) {
+                int choice = Hypothermia();
             /*
             call method hypothermia here
              */
@@ -97,8 +110,24 @@ public class TextBasedAdventureGame {
                 System.out.println("------CONGRATULATIONS-------");
                 System.out.println("You have made it to the end of the Jungle challenge!");
                 System.out.println("your score is " + ((score / 4) * 100) + "%");
-
+                if (choice == 2) {
+                    System.out.println("-----DEATH------");
+                    System.out.println("You have lost the possible point for this round.");
+                    break;
+                }
+                if (choice == 1) {
+                    System.out.println("You survived to the next obstacle!");
+                    score++;
+                    break;
+                }
+                if (Hypothermia() == 3) {
+                }
             }
+            System.out.println("------CONGRATULATIONS-------");
+            System.out.println("You have made it to the end of the Jungle challenge!");
+            System.out.println("your score is " + ((score / 4) * 100) + "%");
+
+        }
 
             System.out.println("Enter 0 if you want to continue or 1 to stop");
             input = in.nextInt();
@@ -110,7 +139,7 @@ public class TextBasedAdventureGame {
                 System.out.println("Thanks for playing!");
                 running = false;
             }
-        }
+
 
     }
 

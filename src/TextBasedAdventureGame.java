@@ -2,12 +2,12 @@
     import java.util.Scanner;
 
     public class TextBasedAdventureGame {
-    public class Main {
         public static void main(String[] args) {
 
             //System objects
             Scanner in = new Scanner(System.in);
             Random rand = new Random();
+            int j = 0;
 
             // Game variables
             String[] enemies = {"Hypothermia", "Jaguar", "Poison", "Starvation"};
@@ -16,14 +16,81 @@
 
             System.out.println("You are stranded on a desert island!");
 
-            GAME:
-            while (running) {
+
+            // GAME:
+            for (j = 0; j == 0; j++) {
+                System.out.println("-------------------------------------------------");
+                System.out.println("The choices you make will decide if you survive. Choose wisely. ");
+                int choice = Jaguar();
+
+                // call the method Jaguar()
+                if (choice == 1) {
+                    System.out.println("-----DEATH------");
+                    break;
+                }
+                if (choice == 2) {
+                    System.out.println("You survived to the next obstacle!");
+                    j = 1;
+                    break;
+                }
+                if (Jaguar() == 3) {
+                    System.out.println("Invalid response");
+
+                }
 
             }
+            for (j = 1; j == 1; j++) {
+                int choice = Venom();
+                // call the method Venom here
+                if (choice == 1) {
+                    System.out.println("-----DEATH------");
+                    break;
+                }
+                if (choice == 3) {
+                    System.out.println("Invalid response");
+                }
+                if (choice == 2) {
+                    System.out.println("You survived to the next obstacle!");
+                    j++;
+                    break;
 
+                }
+            }
+            //call the method Starvation here
+            for (j = 2; j == 2; j++) {
+                int choice = Starvation();
+                if (Starvation() == 1) {
+                    System.out.println("-----DEATH------");
+                    break;
+                } else if (Starvation() == 3) {
+                    System.out.println("Invalid response");
+                }
+                if (choice == 2) {
+                    System.out.println("You survived to the next obstacle!");
+                    j++;
+                    break;
+                }
+            }
+            for (j = 3; j == 3; j++) {
+                int choice = Hypothermia();
+                //call method hypothermia here
+                if (Hypothermia() == 1) {
+                    System.out.println("-----DEATH------");
+                    break;
+                } else if (Hypothermia() == 3) {
+                    System.out.println("Invalid response");
+                }
+            }
         }
-    }
-// A return statement of 1 means the player dies a return statement of 2 means the player survives.
+
+
+
+
+
+
+
+
+        // A return statement of 1 means the player dies a return statement of 2 means the player survives.
         public static int Jaguar() {
             int choice;
             Scanner in = new Scanner(System.in);
@@ -88,9 +155,9 @@
             }
 
         }
-    }
 
-        class Enemy {
+
+
             public static int Hypothermia() {
                 int choice;
                 Scanner in = new Scanner(System.in);

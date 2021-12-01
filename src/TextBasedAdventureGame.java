@@ -77,7 +77,7 @@
         {
             int choice = Hypothermia();
 
-            /**
+            /*
             call method hypothermia here
              */
 

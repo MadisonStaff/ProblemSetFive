@@ -10,92 +10,102 @@
             int j = 0;
             double score = 0;
             boolean running = true;
+            int playAgain;
 
 
             // Game variables
             String[] enemies = {"Hypothermia", "Jaguar", "Venom", "Starvation"};
             System.out.println("You are stranded in the jungle!");
 
-
-            // GAME:
             while (running) {
-                System.out.println("-------------------------------------------------");
-                System.out.println("The choices you make will decide if you survive. Choose wisely. ");
-                int choice = Jaguar();
+                // GAME:
+                while (running) {
+                    System.out.println("-------------------------------------------------");
+                    System.out.println("The choices you make will decide if you survive. Choose wisely. ");
+                    int choice = Jaguar();
 
-                // call the method Jaguar()
-                if (choice == 1) {
-                    System.out.println("-----DEATH------");
-                    System.out.println("You have lost the possible point for this round.");
-                    break;
+                    // call the method Jaguar()
+                    if (choice == 1) {
+                        System.out.println("-----DEATH------");
+                        System.out.println("You have lost the possible point for this round.");
+                        break;
+                    }
+                    if (choice == 2) {
+                        System.out.println("You survived to the next obstacle!");
+                        score++;
+                        break;
+                    }
+                    if (Jaguar() == 3) {
+
+                    }
+
                 }
-                if (choice == 2) {
-                    System.out.println("You survived to the next obstacle!");
-                    score++;
-                    break;
-                }
-                if (Jaguar() == 3) {
+                while (running) {
+                    int choice = Venom();
+                    // call the method Venom here
+                    if (choice == 1) {
+                        System.out.println("-----DEATH------");
+                        System.out.println("You have lost the possible point for this round.");
+                        break;
+                    }
+                    if (choice == 2) {
+                        System.out.println("You survived to the next obstacle!");
+                        score++;
+                        break;
+                    }
+                    if (Venom() == 3) {
+                    }
 
                 }
 
-            }
-            while (running) {
-                int choice = Venom();
-                // call the method Venom here
-                if (choice == 1) {
-                    System.out.println("-----DEATH------");
-                    System.out.println("You have lost the possible point for this round.");
-                    break;
+                //call the method Starvation here
+                while (running) {
+                    int choice = Starvation();
+                    if (choice == 1) {
+                        System.out.println("-----DEATH------");
+                        System.out.println("You have lost the possible point for this round.");
+                        break;
+                    }
+                    if (choice == 2) {
+                        System.out.println("You survived to the next obstacle!");
+                        score++;
+                        break;
+                    } else if (Starvation() == 3) {
+                    }
                 }
-                if (choice == 2) {
-                    System.out.println("You survived to the next obstacle!");
-                    score++;
-                    break;
-                }
-                if (Venom() == 3) {
-                }
-
-            }
-
-        //call the method Starvation here
-            while (running) {
-            int choice = Starvation();
-            if (choice == 1) {
-                System.out.println("-----DEATH------");
-                System.out.println("You have lost the possible point for this round.");
-                break;
-            }
-            if (choice == 2) {
-                System.out.println("You survived to the next obstacle!");
-                score++;
-                break;
-            }
-            else if (Starvation() == 3) {
-            }
-        }
-            while (running) {
-            int choice = Hypothermia();
+                while (running) {
+                    int choice = Hypothermia();
             /*
             call method hypothermia here
              */
-            if (choice == 1) {
-                System.out.println("-----DEATH------");
-                System.out.println("You have lost the possible point for this round.");
-                break;
-            }
-            if (choice == 2) {
-                System.out.println("You survived to the next obstacle!");
-                score++;
-                break;
-            }
-            if (Hypothermia() == 3) {
+                    if (choice == 2) {
+                        System.out.println("-----DEATH------");
+                        System.out.println("You have lost the possible point for this round.");
+                        break;
+                    }
+                    if (choice == 1) {
+                        System.out.println("You survived to the next obstacle!");
+                        score++;
+                        break;
+                    }
+                    if (Hypothermia() == 3) {
+                    }
+                }
+                System.out.println("------CONGRATULATIONS-------");
+                System.out.println("You have made it to the end of the Jungle challenge!");
+                System.out.println("your score is " + ((score / 4) * 100) + "%");
+
+                System.out.println("Press 0 if the user wants to play again, press 1 to exit the jungle");
+                playAgain = in.nextInt();
+
+                if(playAgain == 0) {
+                    continue;
+                } else {
+                    break;
+                }
+
             }
         }
-            System.out.println("------CONGRATULATIONS-------");
-            System.out.println("You have made it to the end of the Jungle challenge!");
-            System.out.println("your score is "+((score /4)*100)+"%");
-
-    }
 
 
 

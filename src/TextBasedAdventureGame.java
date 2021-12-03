@@ -1,4 +1,7 @@
-    import java.util.Random;
+//This is a simple text based adventure came that takes you through a jungle adventure. The game is structured with
+// nested loops. It progresses like a story and ends with outputting your score based off how many times you died.
+
+import java.util.Random;
     import java.util.Scanner;
 
     public class TextBasedAdventureGame {
@@ -78,12 +81,12 @@
             /*
             call method hypothermia here
              */
-                    if (choice == 2) {
+                    if (choice == 1) {
                         System.out.println("-----DEATH------");
                         System.out.println("You have lost the possible point for this round.");
                         break;
                     }
-                    if (choice == 1) {
+                    if (choice == 2) {
                         System.out.println("You survived to the next obstacle!");
                         score++;
                         break;
